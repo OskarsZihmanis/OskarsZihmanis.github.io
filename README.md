@@ -1,1 +1,1 @@
-# OskarsZihmanis.github.io
+[Apskatīt majaslapu](/majas)
