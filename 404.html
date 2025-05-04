@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapa nav atrasta • 404</title>
+    <style>
+        :root {
+            --sunshine: #FFD700;  /* Spilgta dzeltena */
+            --sunlight: #FFEB3B;  /* Gaišāka nokrāsa */
+            --amber: #FFC107;     /* Siltāka dzeltena */
+            --text: #333333;      /* Tumšs teksts */
+            --light: #FFF9C4;     /* Kremaini dzeltena fona nokrāsa */
+        }
+        
+        body {
+            font-family: 'Comfortaa', cursive, sans-serif;
+            background: linear-gradient(135deg, var(--light), #FFFDE7);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: var(--text);
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            animation: fadeIn 0.6s ease-out;
+            border: 2px solid var(--sunshine);
+        }
+        
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: var(--amber);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        p {
+            font-size: 1.3rem;
+            margin: 1rem 0 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--sunshine), var(--amber));
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.6);
+            background: linear-gradient(135deg, var(--sunlight), var(--sunshine));
+        }
+        
+        .counter {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .sun {
+            margin: 1.5rem auto;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--sunshine) 60%, var(--amber));
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+            to { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 215, 0, 0.8); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oho! Šī lapa ir pazudusi saulainajā pusē... ☀️</p>
+        
+        <div class="sun"></div>
+        
+        <a href="/majas" class="btn">Atgriezties uz sākumlapu</a>
+        
+        <div class="counter">
+            Automātiskā pārvirzīšana pēc <span id="countdown">5</span> sekundēm
+        </div>
+    </div>
+
+    <script>
+        // Dinamiskais skaitītājs
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = "/majas";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
