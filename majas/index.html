@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oskars Zihmanis | Oficiālā Mājaslapa</title>
+    <script>
+        // Aizsardzība pret pirmkoda apskati
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+U, F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+            if ((e.ctrlKey && e.key === 'u') || 
+                e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'C')) {
+                e.preventDefault();
+                window.location.href = "/access-denied/";
+            }
+        });
+
+        // Aizsardzība pret labo klikšķi
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            window.location.href = "/access-denied/";
+        });
+
+        // Aizsardzība pret DevTools atvēršanu
+        setInterval(function() {
+            if (window.outerWidth - window.innerWidth > 100 || 
+                window.outerHeight - window.innerHeight > 100) {
+                window.location.href = "/access-denied/";
+            }
+        }, 1000);
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -213,6 +241,7 @@
             transform: translateY(-5px);
         }
     </style>
+    <style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style>
 </head>
 <body>
     <!-- Hero sekcija -->
@@ -301,7 +330,7 @@
             <a href="#" class="social-icon">✉️</a>
             <a href="#" class="social-icon">💼</a>
         </div>
-        <p>© 2025 Oskars Zihmanis. Visas autortiesības aizsargātas.</p>
+        <p>© 2023 Oskars Zihmanis. Visas tiesības aizsargātas.</p>
     </footer>
 
     <script>
