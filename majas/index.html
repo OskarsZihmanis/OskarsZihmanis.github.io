@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oskars Zihmanis | Oficiālā Mājaslapa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --dark-gold: #FFA500;
+            --black: #121212;
+            --white: #FFFFFF;
+            --gray: #2A2A2A;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        /* Hero sekcija */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--gold), var(--dark-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px var(--gold); }
+            to { text-shadow: 0 0 20px var(--dark-gold); }
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Social media kartiņas */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 5%;
+        }
+        
+        .social-card {
+            background: var(--gray);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+            border: 1px solid var(--gold);
+            position: relative;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .social-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .social-content {
+            padding: 20px;
+        }
+        
+        .social-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+        
+        .social-card p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Video sekcija */
+        .video-section {
+            padding: 80px 5%;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+        }
+        
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .video-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .video-card:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Kontaktu forma */
+        .contact {
+            padding: 80px 5%;
+            background: var(--gray);
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: var(--black);
+            border-top: 1px solid var(--gold);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero sekcija -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>OSKARS ZIHMANIS</h1>
+            <p>Digitālā satura veidotājs • Video speciālists • Sociālo mediju eksperts</p>
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="#social" class="btn">MANI SOCIĀLIE MEDIJI</a>
+                <a href="#contact" class="btn">KONTAKTI</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social media sekcija -->
+    <section id="social" class="social-grid">
+        <div class="social-card">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="YouTube">
+            <div class="social-content">
+                <h3>YouTube</h3>
+                <p>Apskaties manus jaunākos video materiālus un abonē kanālu!</p>
+                <a href="https://youtube.com/@OskarsZihmanis" target="_blank" class="btn">APSKATĪT KANĀLU</a>
+            </div>
+        </div>
+        
+        <div class="social-card">
+            <img src="https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?ixlib=rb-4.0.3&auto=format&fit-crop&w=1000&q=80" alt="TikTok">
+            <div class="social-content">
+                <h3>TikTok</h3>
+                <p>Seko manam TikTok profilam un redzi visjaunākos īsos video!</p>
+                <a href="https://tiktok.com/@Oskars.Zihmanis" target="_blank" class="btn">SEKOT PROFILAM</a>
+            </div>
+        </div>
+        
+        <div class="social-card">
+            <img src="https://images.unsplash.com/photo-1611162616475-46592b321512?ixlib=rb-4.0.3&auto=format&fit-crop&w=1000&q=80" alt="Instagram">
+            <div class="social-content">
+                <h3>Instagram</h3>
+                <p>Seko manam Instagram profilam un redzi aizkulisēs saturu!</p>
+                <a href="#" class="btn">PIETEIKTIES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video sekcija -->
+    <section class="video-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--gold);">POPULĀRĀKIE VIDEO</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px; opacity: 0.8;">Apskaties manus vispopulārākos video no dažādām platformām</p>
+        
+        <div class="video-container">
+            <div class="video-card">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontaktu sekcija -->
+    <section id="contact" class="contact">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--gold);">SAZINĀTIES AR MANI</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px; opacity: 0.8;">Vai tev ir jautājumi vai sadarbības piedāvājumi? Raksti man!</p>
+        
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Vārds" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="E-pasts" required>
+            </div>
+            <div class="form-group">
+                <textarea rows="5" placeholder="Tava ziņa..."></textarea>
+            </div>
+            <button type="submit" class="btn">SŪTĪT ZIŅU</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon">📱</a>
+            <a href="#" class="social-icon">✉️</a>
+            <a href="#" class="social-icon">💼</a>
+        </div>
+        <p>© 2023 Oskars Zihmanis. Visas tiesības aizsargātas.</p>
+    </footer>
+
+    <script>
+        // Vienkāršs scroll efektam
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
