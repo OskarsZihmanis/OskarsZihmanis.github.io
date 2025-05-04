@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Pieeja liegta | Oskars Zihmanis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --dark-gold: #FFA500;
+            --black: #121212;
+            --white: #FFFFFF;
+            --red: #FF5252;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23FF5252" stroke-width="2" stroke-dasharray="5,5"/></svg>');
+            background-size: 40px;
+        }
+        
+        .error-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid var(--red);
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(255, 82, 82, 0.3);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        h1 {
+            font-size: 5rem;
+            color: var(--red);
+            margin: 0;
+            line-height: 1;
+        }
+        
+        h2 {
+            color: var(--gold);
+            margin-top: 20px;
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .lock-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--red);
+            animation: pulse 1.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="lock-icon">🔒</div>
+        <h1>403</h1>
+        <h2>PIEEJA LIEGTA</h2>
+        <p>Jums nav nepieciešamo atļauju, lai piekļūtu šim saturam.</p>
+        <p>Ja uzskatāt, ka šī ir kļūda, lūdzu, sazinieties ar vietnes administratoru.</p>
+        <a href="/" class="btn">ATGRIEZIES UZ SĀKUMLAPU</a>
+    </div>
+</body>
+</html>
